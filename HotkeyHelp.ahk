@@ -1,4 +1,4 @@
-﻿; Hotkey Help
+﻿; HotkeyHelp
 ; Fanatic Guru
 ; 2019 01 03
 ;
@@ -41,7 +41,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 Files_Excluded 	:= " "
 
 ; File Name for Exported Help Dialog
-TextOut_FileName := "HotKey Help - Dialog.txt"
+TextOut_FileName := "HotkeyHelp - Dialog.txt"
 
 ; Long or Short Hotkey and Hotstring Names (Modifier Order Matters)
 ; Hot_Excluded 	:= "Win+Ctrl+Alt+Escape|If|IfWinActive|#a|fyi|brb"
@@ -84,32 +84,32 @@ SearchEdit.Docked := true
 
 ; Get Settings From Ini File
 if Set_IniSet
-	if FileExist("Hotkey Help.ini")
+	if FileExist("HotkeyHelp.ini")
 	{
-		IniRead, Set_ShowBlank, Hotkey Help.ini, Settings, Set_ShowBlank, %Set_ShowBlank%
-		IniRead, Set_ShowBlankInclude, Hotkey Help.ini, Settings, Set_ShowBlankInclude, %Set_ShowBlankInclude%
-		IniRead, Set_ShowExe, Hotkey Help.ini, Settings, Set_ShowExe, %Set_ShowExe%
-		IniRead, Set_ShowHotkey, Hotkey Help.ini, Settings, Set_ShowHotkey, %Set_ShowHotkey%
-		IniRead, Set_VarHotkey, Hotkey Help.ini, Settings, Set_ShowHotkey, %Set_VarHotkey%
-		IniRead, Set_FlagHotkey, Hotkey Help.ini, Settings, Set_ShowHotkey, %Set_FlagHotkey%
-		IniRead, Set_ShowString, Hotkey Help.ini, Settings, Set_ShowString, %Set_ShowString%
-		IniRead, Set_AhkExe, Hotkey Help.ini, Settings, Set_AhkExe, %Set_AhkExe%
-		IniRead, Set_AhkTxt, Hotkey Help.ini, Settings, Set_AhkTxt, %Set_AhkTxt%
-		IniRead, Set_AhkTxtOver, Hotkey Help.ini, Settings, Set_AhkTxtOver, %Set_AhkTxtOver%
-		IniRead, Set_SortInfo, Hotkey Help.ini, Settings, Set_SortInfo, %Set_SortInfo%
-		IniRead, Set_CapHotkey, Hotkey Help.ini, Settings, Set_CapHotkey, %Set_CapHotkey%
-		IniRead, Set_CapHotkey_Radio, Hotkey Help.ini, Settings, Set_CapHotkey_Radio, %Set_CapHotkey_Radio%
-		IniRead, Set_HideFold, Hotkey Help.ini, Settings, Set_HideFold, %Set_HideFold%
-		IniRead, Set_TextOut, Hotkey Help.ini, Settings, Set_TextOut, %Set_TextOut%
-		IniRead, Set_FindPos, Hotkey Help.ini, Settings, Set_FindPos, %Set_FindPos%
-		IniRead, Set_IniSet, Hotkey Help.ini, Settings, Set_IniSet, %Set_IniSet%
-		IniRead, Set_IniExcluded, Hotkey Help.ini, Settings, Set_IniExcluded, %Set_IniExcluded%
-		IniRead, Set_Hotkey_Mod_Delimiter, Hotkey Help.ini, Settings, Set_Hotkey_Mod_Delimiter, %Set_Hotkey_Mod_Delimiter%
+		IniRead, Set_ShowBlank, HotkeyHelp.ini, Settings, Set_ShowBlank, %Set_ShowBlank%
+		IniRead, Set_ShowBlankInclude, HotkeyHelp.ini, Settings, Set_ShowBlankInclude, %Set_ShowBlankInclude%
+		IniRead, Set_ShowExe, HotkeyHelp.ini, Settings, Set_ShowExe, %Set_ShowExe%
+		IniRead, Set_ShowHotkey, HotkeyHelp.ini, Settings, Set_ShowHotkey, %Set_ShowHotkey%
+		IniRead, Set_VarHotkey, HotkeyHelp.ini, Settings, Set_ShowHotkey, %Set_VarHotkey%
+		IniRead, Set_FlagHotkey, HotkeyHelp.ini, Settings, Set_ShowHotkey, %Set_FlagHotkey%
+		IniRead, Set_ShowString, HotkeyHelp.ini, Settings, Set_ShowString, %Set_ShowString%
+		IniRead, Set_AhkExe, HotkeyHelp.ini, Settings, Set_AhkExe, %Set_AhkExe%
+		IniRead, Set_AhkTxt, HotkeyHelp.ini, Settings, Set_AhkTxt, %Set_AhkTxt%
+		IniRead, Set_AhkTxtOver, HotkeyHelp.ini, Settings, Set_AhkTxtOver, %Set_AhkTxtOver%
+		IniRead, Set_SortInfo, HotkeyHelp.ini, Settings, Set_SortInfo, %Set_SortInfo%
+		IniRead, Set_CapHotkey, HotkeyHelp.ini, Settings, Set_CapHotkey, %Set_CapHotkey%
+		IniRead, Set_CapHotkey_Radio, HotkeyHelp.ini, Settings, Set_CapHotkey_Radio, %Set_CapHotkey_Radio%
+		IniRead, Set_HideFold, HotkeyHelp.ini, Settings, Set_HideFold, %Set_HideFold%
+		IniRead, Set_TextOut, HotkeyHelp.ini, Settings, Set_TextOut, %Set_TextOut%
+		IniRead, Set_FindPos, HotkeyHelp.ini, Settings, Set_FindPos, %Set_FindPos%
+		IniRead, Set_IniSet, HotkeyHelp.ini, Settings, Set_IniSet, %Set_IniSet%
+		IniRead, Set_IniExcluded, HotkeyHelp.ini, Settings, Set_IniExcluded, %Set_IniExcluded%
+		IniRead, Set_Hotkey_Mod_Delimiter, HotkeyHelp.ini, Settings, Set_Hotkey_Mod_Delimiter, %Set_Hotkey_Mod_Delimiter%
 		if Set_FindPos
 		{
-			IniRead, Set_FindPos_deltaX, Hotkey Help.ini, Settings, Set_FindPos_deltaX
-			IniRead, Set_FindPos_deltaY, Hotkey Help.ini, Settings, Set_FindPos_deltaY
-			IniRead, Set_FindPos_Docked, Hotkey Help.ini, Settings, Set_FindPos_Docked
+			IniRead, Set_FindPos_deltaX, HotkeyHelp.ini, Settings, Set_FindPos_deltaX
+			IniRead, Set_FindPos_deltaY, HotkeyHelp.ini, Settings, Set_FindPos_deltaY
+			IniRead, Set_FindPos_Docked, HotkeyHelp.ini, Settings, Set_FindPos_Docked
 			if !Set_FindPos_deltaX
 				Set_FindPos_deltaX:=0
 			if !Set_FindPos_deltaY
@@ -121,10 +121,10 @@ if Set_IniSet
 
 ; Get Excluded Information From Ini File
 if Set_IniExcluded
-	if FileExist("Hotkey Help.ini")
+	if FileExist("HotkeyHelp.ini")
 	{
-		IniRead, Files_Excluded, Hotkey Help.ini, Excluded, Files_Excluded, %Files_Excluded%
-		IniRead, Hot_Excluded, Hotkey Help.ini, Excluded, Hot_Excluded, %Hot_Excluded%
+		IniRead, Files_Excluded, HotkeyHelp.ini, Excluded, Files_Excluded, %Files_Excluded%
+		IniRead, Hot_Excluded, HotkeyHelp.ini, Excluded, Hot_Excluded, %Hot_Excluded%
 	}
 ;}
 
@@ -134,7 +134,7 @@ if Set_IniExcluded
 
 ; Create Setting Gui
 Gui, Set:Font, s10
-Gui, Set:Add, Text, x120 y10 w200 h20 , Hotkey Help - Pick Settings
+Gui, Set:Add, Text, x120 y10 w200 h20 , HotkeyHelp - Pick Settings
 Gui, Set:Add, Text, x30 y40 w390 h2 0x7
 Gui, Set:Add, CheckBox, x60 y50 w380 h30 vSet_ShowBlank, Show Files With No Hotkeys
 Gui, Set:Add, CheckBox, x60 yp+35 w380 h30 vSet_ShowBlankInclude, Show Include Files With No Hotkeys
@@ -290,7 +290,7 @@ Gui, Excluded:Add, Edit, x20 y100 vGui_Excluded -E0x200, %Gui_Excluded%
 			{
 				FileRead, Script_File_Txt, %File_Path_Txt%	;  Read Text File with Same Name as AHK Script File into String
 				if not ErrorLevel
-					Script_File .= Parse_Delimiter "� Hotkey Help Text File �" Parse_Delimiter Script_File_Txt	;  Append Txt File onto AHK File
+					Script_File .= Parse_Delimiter "� HotkeyHelp Text File �" Parse_Delimiter Script_File_Txt	;  Append Txt File onto AHK File
 			}
 		}
 		if !Script_File
@@ -300,7 +300,7 @@ Gui, Excluded:Add, Edit, x20 y100 vGui_Excluded -E0x200, %Gui_Excluded%
 		Loop, Parse, Script_File, %Parse_Delimiter%, %Parse_OmitChar%	; Parse Each Line of Script File
 		{
 			File_Line := A_LoopField
-			if (File_Line = "� Hotkey Help Text File �")
+			if (File_Line = "� HotkeyHelp Text File �")
 			{
 				Txt_Ahk_Started := true
 				continue
@@ -551,12 +551,12 @@ Gui, Excluded:Add, Edit, x20 y100 vGui_Excluded -E0x200, %Gui_Excluded%
 				Gui, Add, Edit, vGui_Display ReadOnly -E0x200 hwndidDisplay +0x100, % SubStr(Display,1,32000)
 				ControlSetText,, %Display%, ahk_id %idDisplay%
 			}
-			Gui, Show, AutoSize, Hotkey Help
+			Gui, Show, AutoSize, HotkeyHelp
 			Send ^{Home}
 		}
 		else
 		{
-			Gui, Show,, Hotkey Help
+			Gui, Show,, HotkeyHelp
 			Send ^{Home}
 		}
 	}	
@@ -576,7 +576,7 @@ Gui, Excluded:Add, Edit, x20 y100 vGui_Excluded -E0x200, %Gui_Excluded%
 			Gui, Add, Edit, vGui_Display ReadOnly -E0x200 hwndidDisplay +0x100, % SubStr(Display,1,32000)
 			ControlSetText,, %Display%, ahk_id %idDisplay%
 		}
-		Gui, Show, AutoSize, Hotkey Help
+		Gui, Show, AutoSize, HotkeyHelp
 		Send ^{Home}
 		Gui_Created := true
 	}
@@ -588,12 +588,12 @@ return
 ;}
 
 #!f1::	;{ <-- Settings
-	Gui, Set:Show,, Hotkey Help - Settings
+	Gui, Set:Show,, HotkeyHelp - Settings
 return
 ;}
 
 #^f1::	;{ <-- Excluded Files, Hotkeys, and Hotstrings
-	Gui, Excluded:Show, AutoSize, Hotkey Help - Excluded
+	Gui, Excluded:Show, AutoSize, HotkeyHelp - Excluded
 	Send ^{Home}
 return
 ;}
@@ -638,12 +638,12 @@ return
 			Gui, Raw:Color, FFFFFF
 			Gui, Raw:Font, s10, Courier New
 			Gui, Raw:Add, Edit, vGui_Raw_Display ReadOnly -E0x200, %Raw_Display%
-			Gui, Raw:Show, AutoSize, Hotkey Help
+			Gui, Raw:Show, AutoSize, HotkeyHelp
 			Send ^{Home}
 		}
 		else
 		{
-			Gui, Raw:Show, AutoSize, Hotkey Help - Raw Hotkeys
+			Gui, Raw:Show, AutoSize, HotkeyHelp - Raw Hotkeys
 			Send ^{Home}
 		}
 	else
@@ -652,7 +652,7 @@ return
 		Gui, Raw:Color, FFFFFF
 		Gui, Raw:Font, s10, Courier New
 		Gui, Raw:Add, Edit, vGui_Raw_Display ReadOnly -E0x200, %Raw_Display%
-		Gui, Raw:Show, AutoSize, Hotkey Help - Raw Hotkeys
+		Gui, Raw:Show, AutoSize, HotkeyHelp - Raw Hotkeys
 		Send ^{Home}
 		Gui_Raw_Created := true
 	}
@@ -661,7 +661,7 @@ return
 ;}
 
 #if WinActive("ahk_id " idDisplayWin)
-^f:: ;{ <-- (Hotkey Help) : Find
+^f:: ;{ <-- (HotkeyHelp) : Find
 	SearchEdit.Dialog(idDisplay,3+Floor(5*A_ScreenDPI/96))
 return
 #if
@@ -686,9 +686,9 @@ SaveSettings:
 			Set_FindPos_deltaX:=0
 		if !Set_FindPos_deltaY
 			Set_FindPos_deltaY:=0
-		IniWrite, % SearchEdit.UnDock.deltaX, Hotkey Help.ini, Settings, Set_FindPos_deltaX
-		IniWrite, % SearchEdit.UnDock.deltaY, Hotkey Help.ini, Settings, Set_FindPos_deltaY
-		IniWrite, % SearchEdit.Docked, Hotkey Help.ini, Settings, Set_FindPos_Docked
+		IniWrite, % SearchEdit.UnDock.deltaX, HotkeyHelp.ini, Settings, Set_FindPos_deltaX
+		IniWrite, % SearchEdit.UnDock.deltaY, HotkeyHelp.ini, Settings, Set_FindPos_deltaY
+		IniWrite, % SearchEdit.Docked, HotkeyHelp.ini, Settings, Set_FindPos_Docked
 	}
 	ExitApp
 return
@@ -839,8 +839,8 @@ ExcludedButtonConfirmEdit:
 	Hot_Excluded := SubStr(Hot_Excluded, 2)
 	if Set_IniExcluded
 	{
-		IniWrite, %Files_Excluded%, Hotkey Help.ini, Excluded, Files_Excluded
-		IniWrite, %Hot_Excluded%, Hotkey Help.ini, Excluded, Hot_Excluded
+		IniWrite, %Files_Excluded%, HotkeyHelp.ini, Excluded, Files_Excluded
+		IniWrite, %Hot_Excluded%, HotkeyHelp.ini, Excluded, Hot_Excluded
 	}
 return
 
@@ -871,25 +871,25 @@ SetGuiEscape:
 	Gui, Set:Submit
 	if Set_IniSet
 	{
-		IniWrite, %Set_ShowBlank%, Hotkey Help.ini, Settings, Set_ShowBlank
-		IniWrite, %Set_ShowBlankInclude%, Hotkey Help.ini, Settings, Set_ShowBlankInclude
-		IniWrite, %Set_ShowExe%, Hotkey Help.ini, Settings, Set_ShowExe
-		IniWrite, %Set_ShowHotkey%, Hotkey Help.ini, Settings, Set_ShowHotkey
-		IniWrite, %Set_VarHotkey%, Hotkey Help.ini, Settings, Set_VarHotkey
-		IniWrite, %Set_FlagHotkey%, Hotkey Help.ini, Settings, Set_FlagHotkey
-		IniWrite, %Set_ShowString%, Hotkey Help.ini, Settings, Set_ShowString
-		IniWrite, %Set_AhkExe%, Hotkey Help.ini, Settings, Set_AhkExe
-		IniWrite, %Set_AhkTxt%, Hotkey Help.ini, Settings, Set_AhkTxt
-		IniWrite, %Set_AhkTxtOver%, Hotkey Help.ini, Settings, Set_AhkTxtOver
-		IniWrite, %Set_SortInfo%, Hotkey Help.ini, Settings, Set_SortInfo
-		IniWrite, %Set_CapHotkey%, Hotkey Help.ini, Settings, Set_CapHotkey
-		IniWrite, %Set_CapHotkey_Radio%, Hotkey Help.ini, Settings, Set_CapHotkey_Radio
-		IniWrite, %Set_HideFold%, Hotkey Help.ini, Settings, Set_HideFold
-		IniWrite, %Set_TextOut%, Hotkey Help.ini, Settings, Set_TextOut
-		IniWrite, %Set_FindPos%, Hotkey Help.ini, Settings, Set_FindPos
-		IniWrite, %Set_IniSet%, Hotkey Help.ini, Settings, Set_IniSet
-		IniWrite, %Set_IniExcluded%, Hotkey Help.ini, Settings, Set_IniExcluded
-		IniWrite, %Set_Hotkey_Mod_Delimiter%, Hotkey Help.ini, Settings, Set_Hotkey_Mod_Delimiter
+		IniWrite, %Set_ShowBlank%, HotkeyHelp.ini, Settings, Set_ShowBlank
+		IniWrite, %Set_ShowBlankInclude%, HotkeyHelp.ini, Settings, Set_ShowBlankInclude
+		IniWrite, %Set_ShowExe%, HotkeyHelp.ini, Settings, Set_ShowExe
+		IniWrite, %Set_ShowHotkey%, HotkeyHelp.ini, Settings, Set_ShowHotkey
+		IniWrite, %Set_VarHotkey%, HotkeyHelp.ini, Settings, Set_VarHotkey
+		IniWrite, %Set_FlagHotkey%, HotkeyHelp.ini, Settings, Set_FlagHotkey
+		IniWrite, %Set_ShowString%, HotkeyHelp.ini, Settings, Set_ShowString
+		IniWrite, %Set_AhkExe%, HotkeyHelp.ini, Settings, Set_AhkExe
+		IniWrite, %Set_AhkTxt%, HotkeyHelp.ini, Settings, Set_AhkTxt
+		IniWrite, %Set_AhkTxtOver%, HotkeyHelp.ini, Settings, Set_AhkTxtOver
+		IniWrite, %Set_SortInfo%, HotkeyHelp.ini, Settings, Set_SortInfo
+		IniWrite, %Set_CapHotkey%, HotkeyHelp.ini, Settings, Set_CapHotkey
+		IniWrite, %Set_CapHotkey_Radio%, HotkeyHelp.ini, Settings, Set_CapHotkey_Radio
+		IniWrite, %Set_HideFold%, HotkeyHelp.ini, Settings, Set_HideFold
+		IniWrite, %Set_TextOut%, HotkeyHelp.ini, Settings, Set_TextOut
+		IniWrite, %Set_FindPos%, HotkeyHelp.ini, Settings, Set_FindPos
+		IniWrite, %Set_IniSet%, HotkeyHelp.ini, Settings, Set_IniSet
+		IniWrite, %Set_IniExcluded%, HotkeyHelp.ini, Settings, Set_IniExcluded
+		IniWrite, %Set_Hotkey_Mod_Delimiter%, HotkeyHelp.ini, Settings, Set_Hotkey_Mod_Delimiter
 	}
 	Set_Hotkey_Mod_Delimiter := Trim(Set_Hotkey_Mod_Delimiter,"""")
 return
