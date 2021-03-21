@@ -301,6 +301,7 @@ Gui, Excluded:Add, Edit, x20 y100 vGui_Excluded -E0x200, %Gui_Excluded%
 		Txt_Ahk_Started := false
 		Loop, Parse, Script_File, %Parse_Delimiter%, %Parse_OmitChar%	; Parse Each Line of Script File
 		{
+			Previous_File_Line := File_Line
 			File_Line := A_LoopField
 			if (File_Line = "� HotkeyHelp Text File �")
 			{
@@ -326,6 +327,10 @@ Gui, Excluded:Add, Edit, x20 y100 vGui_Excluded -E0x200, %Gui_Excluded%
 					{
 						Line_Hot := "<HS>  " Match1
 						Line_Help := (Match3 ? Trim(Match4) : "= " Match2 Match4)
+						; Use previous line comment as fall back
+						if !Line_Help and RegExMatch(Previous_File_Line, ";(.*)", CommentMatch)
+							Line_Help := Trim(CommentMatch1)
+						
 						if Txt_Ahk_Started
 						{
 							if (Help[File_Title,"Hot_Text",Line_Hot,"Count"] = "")
@@ -378,6 +383,10 @@ Gui, Excluded:Add, Edit, x20 y100 vGui_Excluded -E0x200, %Gui_Excluded%
 						if (SubStr(Match1,1,1) = "{")
 							Match1 := SubStr(Match1,2)
 					Line_Help := Trim(Match1)
+					; Use previous line comment as fall back
+					if !Line_Help and RegExMatch(Previous_File_Line, ";(.*)", CommentMatch)
+						Line_Help := Trim(CommentMatch1)
+					
 					if Hotkey_Command
 						if Set_FlagHotkey
 							Line_Hot := "<HK>  " Line_Hot
