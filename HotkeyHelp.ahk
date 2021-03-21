@@ -2,6 +2,8 @@
 ; Fanatic Guru
 ; 2019 01 03
 ;
+; Source: https://www.autohotkey.com/boards/viewtopic.php?f=6&t=96
+;
 ; Inspired by Jade Dragon's Infile Hotkey Scanner
 ; PostMessage Information and Script Status derived from Lexikos
 ;
